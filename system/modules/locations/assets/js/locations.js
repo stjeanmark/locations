@@ -1,6 +1,6 @@
 (function($) {
 $(document).ready(function() {
-  $('div.mod_locations').each(function(i, cte) {
+  $('div.mod_locations_list').each(function(i, cte) {
 	var module = $(this);
 	var selector = module.find('select.locations_state_selector');
 	module.find('div.state').hide();
