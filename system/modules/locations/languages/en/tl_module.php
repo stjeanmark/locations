@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Locations - Mapping and Distance Calculating Plugin for Contao
+ * Locations - Location Plugin for Contao
  *
  * Copyright (C) 2018 Andrew Stevens
  *
