@@ -1,8 +1,8 @@
 {
-    "name":"asconsulting/wp2contao",
-    "description":"Tool for migrating data from WordPress to Contao Open Source CMS",
+    "name":"asconsulting/locations",
+    "description":"Location listings Contao Open Source CMS",
     "homepage": "https://andrewstevens.consulting",
-    "keywords":["contao", "wordpress", "converter", "migration"],
+    "keywords":["contao", "locations", "store finder"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
@@ -22,14 +22,14 @@
     "autoload": {
         "psr-0": {
             "Asc\\": [
-                "system/modules/wp2contao/library"
+                "system/modules/locations/library"
             ]
         }
     },
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/wp2contao": "system/modules/wp2contao"
+                "system/modules/locations": "system/modules/locations"
             }
         }
     },
