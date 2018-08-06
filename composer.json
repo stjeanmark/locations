@@ -13,25 +13,22 @@
     ],
     "require":{
         "php": "~5.4 || ~7.0",
-        "contao/core-bundle": "^3.5.2 || ~4.4",
-        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+        "contao/core-bundle": "~3.2 || ~4.1",
+		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
-    "require-dev": {
-        "contao/manager-plugin": "^2.0"
-    },
-    "autoload": {
+    "autoload":{
         "psr-0": {
-            "Asc\\": [
-                "system/modules/locations/library"
+            "WEM\\": [
+                "library/"
             ]
-        }
+        },
+        "classmap": [""]
     },
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/locations": "system/modules/locations"
+                "": "system/modules/locations"
             }
         }
-    },
-    "minimum-stability": "dev"
+	}
 }
