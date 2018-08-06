@@ -93,7 +93,8 @@ class Locations extends \Backend
 					fputcsv($tmpFile, $arrColumns, $strDelimiter);
 				}
 				$count ++;
-				fputcsv($tmpFile, $row, $strDelimiter);
+				//fputcsv($tmpFile, $row, $strDelimiter);
+				echo "Count " + $count ."<br>";
 			}
 			
 			fseek($tmpFile, 0);
