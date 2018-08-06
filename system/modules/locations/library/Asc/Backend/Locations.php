@@ -14,6 +14,7 @@
 namespace Asc\Backend;
 
 use Contao\DataContainer;
+use Asc\Model\Location;
 
 class Locations extends \Backend
 {
@@ -73,6 +74,38 @@ class Locations extends \Backend
 		$this->log('A new version of record "tl_location.id='.$intId.'" has been created'.$this->getParentEntries('tl_location', $intId), __METHOD__, TL_GENERAL);
 	}
 	
+	public function exportLocations()
+	{
+		$objLocation = Location::findAll();
+		$strDelimiter = ',';
+	
+		if ($objLocation) {
+			$strFilename = "locations_" .(date('Y-m-d_Hi')) ."csv";
+			$tmpFile = fopen('php://memory', 'w');
+			
+			$count = 0;
+			while($row = $objLocation->row()) {
+				if ($count == 0) {
+					$arrColumns = array();
+					foreach ($row as $key => $value) {
+						$arrColumns[] = $key;
+					}
+					fputcsv($tmpFile, $arrColumns, $strDelimiter);
+				}
+				$count ++;
+				fputcsv($tmpFile, $row, $strDelimiter);
+			}
+			
+			fseek($tmpFile, 0);
+			
+			header('Content-Type: text/csv');
+			header('Content-Disposition: attachment; filename="' . $strFilename . '";');
+			fpassthru($tmpFile);
+			exit();
+		} else {
+			return "Nothing to export";
+		}
+	}
 	
 	public function generateAlias($varValue, DataContainer $dc)
 	{
@@ -101,7 +134,6 @@ class Locations extends \Backend
 
 		return $varValue;
 	}
-	
 	
 	public function getStates() {
 		return array(

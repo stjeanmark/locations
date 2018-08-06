@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
             'export' => array
             (
                 'label'               => 'Export Locations CSV',
-                'href'                => 'action=exportTable&id=1&key=e226b01fd89517e77dac606034fd624a',
+                'href'                => 'key=exportLocations',
                 'icon'                => 'system/modules/locations/assets/icons/file-export-icon-16.png'
             ),
             'all' => array
