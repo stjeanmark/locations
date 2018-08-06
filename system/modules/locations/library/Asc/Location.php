@@ -20,7 +20,9 @@ use Asc\Model\Location;
  */
 class Locations {
 	
-	protected $arrStates = array(
+	public function getStates()
+    {		
+        return arrStates = array(
 		"United States" => array(
 			'AL' => 'Alabama',
 			'AK' => 'Alaska',
@@ -84,9 +86,5 @@ class Locations {
 		"Canada" => array(
 			"CAN" => "All Provinces")
 		);
-	
-	public function getStates()
-    {		
-        return $this->arrStates;
     }
 }
