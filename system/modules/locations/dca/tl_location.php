@@ -104,7 +104,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},alias,name;{address_legend},address,city,state,zip,phone;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{publish_legend},published;'
     ),
  
     // Fields
@@ -142,7 +142,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['name'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('mandatory'=>true),
+			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'address' => array
