@@ -84,7 +84,8 @@ class Locations extends \Backend
 			$tmpFile = fopen('php://memory', 'w');
 			
 			$count = 0;
-			while($row = $objLocation->row()) {
+			while($objLocation->next()) {
+				$row = $objLocation->row()
 				if ($count == 0) {
 					$arrColumns = array();
 					foreach ($row as $key => $value) {
@@ -93,8 +94,7 @@ class Locations extends \Backend
 					fputcsv($tmpFile, $arrColumns, $strDelimiter);
 				}
 				$count ++;
-				//fputcsv($tmpFile, $row, $strDelimiter);
-				echo "Count " + $count ."<br>";
+				fputcsv($tmpFile, $row, $strDelimiter);
 			}
 			
 			fseek($tmpFile, 0);
