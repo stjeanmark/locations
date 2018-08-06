@@ -18,6 +18,8 @@ ClassLoader::addClasses(array
 (
     'Asc\Module\LocationsList' 	=> 'system/modules/locations/library/Asc/Module/LocationsList.php',
 	'Asc\Backend\Locations' 	=> 'system/modules/locations/library/Asc/Backend/Locations.php',
+	'Asc\Model\Location' 		=> 'system/modules/locations/library/Asc/Model/Location.php',
+	'Asc\Locations'		 		=> 'system/modules/locations/library/Asc/Locations.php',
 ));
 
 /**
@@ -25,7 +27,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-    'mod_retail_locations_list' => 'system/modules/locations/templates/modules',
-	'item_retail_locations' 	=> 'system/modules/locations/templates/items',
-	'j_retail_selector' 		=> 'system/modules/locations/templates/js',
+    'mod_locations_list' 	=> 'system/modules/locations/templates/modules',
+	'item_location' 		=> 'system/modules/locations/templates/items',
 ));

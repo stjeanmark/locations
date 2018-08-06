@@ -49,7 +49,7 @@ class LocationsList extends \Contao\Module
         {
             $objTemplate = new \BackendTemplate('be_wildcard');
  
-            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['retail_locations_list'][0]) . ' ###';
+            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['locations_list'][0]) . ' ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
             $objTemplate->link = $this->name;
@@ -121,7 +121,7 @@ class LocationsList extends \Contao\Module
 			$arrLocation['country'] = $objLocation->country;
 			$arrLocation['phone'] 	= $objLocation->phone;
 
-			$strItemTemplate = ($this->retail_locations_customItemTpl != '' ? $this->retail_locations_customItemTpl : 'item_retail_locations');
+			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_location');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrLocation);
 			$arrStates[$strStateKey]['locations'][] = $objTemplate->parse();
