@@ -13,6 +13,8 @@
  
 namespace Asc\Backend;
 
+use Contao\DataContainer;
+
 class Locations extends \Backend
 {
 
