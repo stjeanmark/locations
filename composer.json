@@ -18,16 +18,15 @@
     },
     "autoload":{
         "psr-0": {
-            "WEM\\": [
-                "library/"
+            "Asc\\": [
+                "system/modules/locations/library"
             ]
-        },
-        "classmap": [""]
+        }
     },
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/locations"
+                "system/modules/locations": "system/modules/locations"
             }
         }
 	}
