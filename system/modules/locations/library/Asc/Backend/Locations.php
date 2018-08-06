@@ -85,7 +85,7 @@ class Locations extends \Backend
 			
 			$count = 0;
 			while($objLocation->next()) {
-				$row = $objLocation->row()
+				$row = $objLocation->row();
 				if ($count == 0) {
 					$arrColumns = array();
 					foreach ($row as $key => $value) {
