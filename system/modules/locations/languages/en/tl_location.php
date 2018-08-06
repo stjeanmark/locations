@@ -21,8 +21,8 @@ $GLOBALS['TL_LANG']['tl_location']['publish_legend'] 	= 'Publish';
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_location']['alias'] 			= array('Alias', 'Please enter an alias.');
-$GLOBALS['TL_LANG']['tl_location']['name'] 				= array('Retailer Name', 'Retailer Name');
+$GLOBALS['TL_LANG']['tl_location']['alias'] 			= array('Alias', 'Auto-generated alias.');
+$GLOBALS['TL_LANG']['tl_location']['name'] 				= array('Location Name', 'Location Name');
 $GLOBALS['TL_LANG']['tl_location']['address'] 			= array('Address', 'Address');
 $GLOBALS['TL_LANG']['tl_location']['city'] 				= array('City', 'City');
 $GLOBALS['TL_LANG']['tl_location']['state'] 			= array('State', 'State');
