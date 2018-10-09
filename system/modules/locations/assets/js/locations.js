@@ -15,5 +15,6 @@ $(document).ready(function() {
 		}
 	});
   });
+  $('div.mod_locations_list select.locations_state_selector').first().change();
 });
 })(jQuery);
