@@ -104,7 +104,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
