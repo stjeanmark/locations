@@ -5,4 +5,5 @@
 		<?php echo $this->city; ?>, <?php echo $this->state; ?> <?php echo $this->zip; ?><br>
 		<?php echo $this->phone; ?>
 	</div>
+	<div class='link'><?php echo $this->url; ?></div>
 </div>

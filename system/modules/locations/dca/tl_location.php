@@ -186,6 +186,14 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
+		'url' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['url'],
+			'inputType'               => 'text',
+			'default'				  => '',
+			'eval'                    => array('tl_class'=>'clr w50', 'rgxp'=>'url'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
 		'published' => array
 		(
 			'exclude'                 => true,
