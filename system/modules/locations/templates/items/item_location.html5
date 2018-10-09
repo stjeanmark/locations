@@ -3,9 +3,9 @@
 	<div class='address'>
 		<?php echo $this->address; ?><br>
 		<?php echo $this->city; ?>, <?php echo $this->state; ?> <?php echo $this->zip; ?><br>
-		<?php echo $this->phone; ?>
+		<a href="tel:<?php echo $this->phone; ?>"><?php echo $this->phone; ?></a>
 	</div>
 	<?php if ($this->url): ?>
-	<div class='link'><?php echo $this->url; ?></div>
+	<div class='link'><a href="<?php echo $this->url; ?>"><?php echo $this->url; ?></a></div>
 	<?php endif; ?>
 </div>

@@ -167,7 +167,6 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['state'],
 			'inputType'               => 'select',
 			'default'				  => '',
-			'filter'                  => true,
 			'options_callback'		  => array('Asc\Backend\Locations', 'getStates'),
 			'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
