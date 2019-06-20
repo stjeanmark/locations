@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_location_cat'] = array
             'keys' => array
             (
                 'id' => 'primary',
-                'alias' => 'index'
+                'title' => 'index'
             )
         )
     ),
