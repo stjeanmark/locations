@@ -1,7 +1,7 @@
 {
     "name":"brightcloud/rep_locations",
     "description":"Location listings Contao Open Source CMS",
-    "homepage": "http:/www.brightcloudstudo.com",
+    "homepage": "http://www.brightcloudstudo.com",
     "keywords":["contao", "locations", "store finder"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
