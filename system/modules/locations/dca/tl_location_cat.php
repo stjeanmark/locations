@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_location_cat'] = array
     (
         'dataContainer'               => 'Table',
         'enableVersioning'            => true,
-        'ctable'					  => array('tl_location').
+        'ctable'					  => array('tl_location'),
         'sql' => array
         (
             'keys' => array
