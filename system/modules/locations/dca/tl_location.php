@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend}pid,name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
@@ -121,6 +121,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         (
             'sql'                     => "int(10) unsigned NOT NULL default '0'",
             'foreignKey'              => 'tl_location_cat.id',
+            'inputType'               => 'text'
         ),
         'tstamp' => array
         (
