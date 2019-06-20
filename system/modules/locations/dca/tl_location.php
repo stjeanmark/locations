@@ -21,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
-        'ptable'					  => 'tl_location_cat'
+        'ptable'					  => 'tl_location_cat',
         'enableVersioning'            => true,
         'sql' => array
         (
