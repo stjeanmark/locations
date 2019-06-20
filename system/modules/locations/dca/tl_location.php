@@ -21,13 +21,15 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
+        'ptable'					  => 'tl_location_cat'
         'enableVersioning'            => true,
         'sql' => array
         (
             'keys' => array
             (
                 'id' => 'primary',
-                'alias' => 'index'
+                'alias' => 'index',
+                'pid' => 'pid'
             )
         )
     ),
@@ -114,6 +116,10 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+        ),
+        'pid' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'tstamp' => array
         (
