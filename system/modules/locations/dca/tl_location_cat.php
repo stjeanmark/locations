@@ -21,7 +21,6 @@ $GLOBALS['TL_DCA']['tl_location_cat'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
-        'ctable'					  => array('tl_location'),
         'enableVersioning'            => true,
         'sql' => array
         (
@@ -136,7 +135,7 @@ $GLOBALS['TL_DCA']['tl_location_cat'] = array
 			'default'				  => '',
 			'search'                  => true,
 			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'sql'                     => "text NULL"
 		)	
     )
 );
