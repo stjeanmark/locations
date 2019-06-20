@@ -119,7 +119,8 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         ),
         'pid' => array
         (
-            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+            'sql'                     => "int(10) unsigned NOT NULL default '0'",
+            'foreignKey'              => 'tl_location_cat.id',
         ),
         'tstamp' => array
         (
