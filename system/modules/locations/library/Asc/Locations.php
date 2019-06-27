@@ -87,4 +87,15 @@ class Locations {
 				"CAN" => "All Provinces")
 			);
     }
+    
+    public function getCategories()
+    {		
+        return array(
+			"Categories" => array(
+				'AR' => 'Architectual',
+				'HV' => 'HVAC',
+				'IN' => 'Industrial',
+				'ME' => 'Medical'
+			);
+    }
 }

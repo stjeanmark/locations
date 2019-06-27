@@ -38,14 +38,14 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         'sorting' => array
         (
             'mode'                    => 1,
-            'fields'                  => array('state', 'name'),
+            'fields'                  => array('category','state', 'name'),
             'flag'                    => 1,
             'panelLayout'             => 'filter;search,limit'
         ),
         'label' => array
         (
-            'fields'                  => array('name', 'address', 'city', 'state'),
-            'format'                  => '%s (%s %s, %s)'
+            'fields'                  => array('category','name', 'address', 'city', 'state'),
+            'format'                  => '%s (%s %s %s, %s)'
         ),
         'global_operations' => array
         (
@@ -128,7 +128,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['category'],
 			'inputType'               => 'select',
 			'default'				  => '',
-			'options_callback'		  => array('Asc\Backend\Locations', 'getStates'),
+			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),
 			'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
