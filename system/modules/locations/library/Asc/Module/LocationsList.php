@@ -105,25 +105,6 @@ class LocationsList extends \Contao\Module
 			}
 			
 			
-			$strCategoryKey = $objLocation->category;
-			$strCategoryName = ($this->arrCategories["Categories"][$objLocation->category] != '' ? $this->arrCategories["Categories"][$objLocation->category]);
-			if (in_array($objLocation->category, array('AB','BC','MB','NB','NL','NS','NT','NU','ON','PE','QC','SK','YT'))) {
-				$strCategoryKey = 'CAN';
-				$strCategoryName = 'Canada - All Provinces';
-			}
-			
-			if (!array_key_exists($strCategoryKey, $arrCategories)) {
-				$arrCategories[$strCategoryKey] = array(
-					"name" 			=> $strCategoryName,
-					"abbr"			=> $strCategoryKey,
-					"locations"		=> array()
-				);
-			}
-			
-			
-			
-			
-			
 			$arrLocation = array(
 				'id'		=> $objLocation->id,
 				'alias'		=> $objLocation->alias,
@@ -138,7 +119,6 @@ class LocationsList extends \Contao\Module
 			}
 			
 			$arrLocation['name'] 		= $objLocation->name;
-			$arrLocation['category'] 	= $objLocation->category;
 			$arrLocation['address']	 	= $objLocation->address;
 			$arrLocation['city'] 		= $objLocation->city;
 			$arrLocation['state'] 		= $objLocation->state;
@@ -163,16 +143,6 @@ class LocationsList extends \Contao\Module
 		$this->Template->stateOptions = $this->generateSelectOptions();
 		$this->Template->states = $arrStates;
 		
-		
-		$arrTemp2 = $arrCategories;
-		unset($arrTemp2['CAN']);
-		uasort($arrTemp2, array($this,'sortByCategory'));
-		$arrTemp2['CAN'] = $arrStates['CAN'];
-		$arrCategories = $arrTemp2;
-		
-		$this->Template->categoryOptions = $this->generateSelectOptions2();
-		$this->Template->categories = $arrCategories;
-		
 	}
 
 	public function generateSelectOptions($blank = TRUE) {
@@ -187,17 +157,6 @@ class LocationsList extends \Contao\Module
 		return ($blank ? '<option value="">Select Location...</option>' : '') .$strUnitedStates .$strCanada;
 	}
 	
-	public function generateSelectOptions2($blank = TRUE) {
-		$strUnitedStates = '<optgroup label="Categories">';
-		$strCanada = '<optgroup label="Canada"><option value="CAN">All Provinces</option></optgroup>';
-		foreach ($this->arrCategories['Categories'] as $abbr => $category) {
-			if (!in_array($objLocation->category, array('AB','BC','MB','NB','NL','NS','NT','NU','ON','PE','QC','SK','YT'))) {
-				$strUnitedStates .= '<option value="' .$abbr .'">' .$category .'</option>';
-			}
-		}
-		$strUnitedStates .= '</optgroup>';
-		return ($blank ? '<option value="">Select Location...</option>' : '') .$strUnitedStates .$strCanada;
-	}
 	
 	function sortByState($a, $b) {
 		if ($a['Name'] == $b['Name']) {
@@ -205,12 +164,5 @@ class LocationsList extends \Contao\Module
 		}
 		return ($a['Name'] < $b['Name']) ? -1 : 1;
 	}
-	
-	function sortByCategory($a, $b) {
-		if ($a['Name'] == $b['Name']) {
-			return 0;
-		}
-		return ($a['Name'] < $b['Name']) ? -1 : 1;
-	}
-	
+
 } 
