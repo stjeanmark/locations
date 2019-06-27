@@ -26,8 +26,6 @@ class LocationsList extends \Contao\Module
     protected $strTemplate = 'mod_locations_list';
  
 	protected $arrStates = array();
-	
-	protected $arrCategories = array();
  
 	/**
 	 * Initialize the object
@@ -39,7 +37,6 @@ class LocationsList extends \Contao\Module
 	{
 		parent::__construct($objModule, $strColumn);
 		$this->arrStates = Locations::getStates();
-		$this->arrCategories = Locations::getCategories();
 	}
 	
     /**
@@ -84,7 +81,6 @@ class LocationsList extends \Contao\Module
 		}
 
 		$arrStates = array();
-		$arrCategories = array();
 		
 		// Generate List
 		while ($objLocation->next())
@@ -104,7 +100,6 @@ class LocationsList extends \Contao\Module
 				);
 			}
 			
-			
 			$arrLocation = array(
 				'id'		=> $objLocation->id,
 				'alias'		=> $objLocation->alias,
@@ -118,20 +113,19 @@ class LocationsList extends \Contao\Module
 				$arrLocation['link'] = $this->generateFrontendUrl($objTarget->row()) .'?alias=' .$objLocation->alias;
 			}
 			
-			$arrLocation['name'] 		= $objLocation->name;
-			$arrLocation['address']	 	= $objLocation->address;
-			$arrLocation['city'] 		= $objLocation->city;
-			$arrLocation['state'] 		= $objLocation->state;
-			$arrLocation['zip'] 		= $objLocation->zip;
-			$arrLocation['country'] 	= $objLocation->country;
-			$arrLocation['phone'] 		= $objLocation->phone;
-			$arrLocation['url'] 		= $objLocation->url;
+			$arrLocation['name'] 	= $objLocation->name;
+			$arrLocation['address'] = $objLocation->address;
+			$arrLocation['city'] 	= $objLocation->city;
+			$arrLocation['state'] 	= $objLocation->state;
+			$arrLocation['zip'] 	= $objLocation->zip;
+			$arrLocation['country'] = $objLocation->country;
+			$arrLocation['phone'] 	= $objLocation->phone;
+			$arrLocation['url'] 	= $objLocation->url;
 
 			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_location');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrLocation);
 			$arrStates[$strStateKey]['locations'][] = $objTemplate->parse();
-			$arrCategories[$strCategoryKey]['locations'][] = $objTemplate->parse();
 		}
 
 		$arrTemp = $arrStates;
@@ -157,12 +151,11 @@ class LocationsList extends \Contao\Module
 		return ($blank ? '<option value="">Select Location...</option>' : '') .$strUnitedStates .$strCanada;
 	}
 	
-	
 	function sortByState($a, $b) {
 		if ($a['Name'] == $b['Name']) {
 			return 0;
 		}
 		return ($a['Name'] < $b['Name']) ? -1 : 1;
 	}
-
+	
 } 

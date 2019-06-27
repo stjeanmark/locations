@@ -21,5 +21,4 @@ $GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Locations List', 'Locatio
  * Back end modules
  */
 $GLOBALS['TL_LANG']['MOD']['locations'] = array('Locations', 'Configure Locations');
-$GLOBALS['TL_LANG']['MOD']['categories'] = array('Categories', 'Configure Categories');
 
