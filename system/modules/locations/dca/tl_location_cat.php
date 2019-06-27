@@ -12,7 +12,7 @@
 
  
 /**
- * Table tl_location
+ * Table tl_location_cat
  */
 $GLOBALS['TL_DCA']['tl_location_cat'] = array
 (

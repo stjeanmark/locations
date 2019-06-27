@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend}pid,name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend}category,name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
@@ -144,6 +144,15 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			),
 			'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
 
+		),
+		'category' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['category'],
+			'inputType'               => 'select',
+			'default'				  => '',
+			'options_callback'		  => array('Asc\Backend\Categories', 'getCategories'),
+			'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'name' => array
 		(
