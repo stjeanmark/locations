@@ -1,0 +1,33 @@
+{
+    "name":"brightcloud/rep_locations",
+    "description":"Location listings Contao Open Source CMS",
+    "homepage": "http://www.brightcloudstudo.com",
+    "keywords":["contao", "locations", "store finder"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
+        {
+            "name":"Mark St. Jean",
+            "homepage":"http://www.brightcloudstudio.com"
+        }
+    ],
+    "require":{
+        "php": "~5.4 || ~7.0",
+        "contao/core-bundle": "~3.2 || ~4.1",
+		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+    },
+    "autoload":{
+        "psr-0": {
+            "Asc\\": [
+                "system/modules/locations/library"
+            ]
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/locations": "system/modules/locations"
+            }
+        }
+	}
+}

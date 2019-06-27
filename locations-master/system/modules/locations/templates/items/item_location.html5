@@ -1,0 +1,11 @@
+<div class="location_full block<?= $this->class ?>">
+	<div class='name'><?php echo $this->name; ?></div>
+	<div class='address'>
+		<?php echo $this->address; ?><br>
+		<?php echo $this->city; ?>, <?php echo $this->state; ?> <?php echo $this->zip; ?><br>
+		<a href="tel:<?php echo $this->phone; ?>"><?php echo $this->phone; ?></a>
+	</div>
+	<?php if ($this->url): ?>
+	<div class='link'><a href="<?php echo $this->url; ?>"><?php echo $this->url; ?></a></div>
+	<?php endif; ?>
+</div>
