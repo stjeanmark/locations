@@ -21,7 +21,6 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
-        'ptable'					  => 'tl_category',
         'enableVersioning'            => true,
         'sql' => array
         (
@@ -116,12 +115,6 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-        ),
-        'pid' => array
-        (
-            'sql'                     => "int(10) unsigned NOT NULL default '0'",
-			'foreignKey'              => 'tl_category.id',
-			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
         ),
         'tstamp' => array
         (
