@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_category'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{category_legend}name,alias;{publish_legend},published;'
+        'default'                     => '{category_legend},name,alias;{publish_legend},published;'
     ),
  
     // Fields
