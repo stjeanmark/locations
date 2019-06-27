@@ -74,7 +74,7 @@ class Categories extends \Backend
 		$this->log('A new version of record "tl_category.id='.$intId.'" has been created'.$this->getParentEntries('tl_category', $intId), __METHOD__, TL_GENERAL);
 	}
 	
-	public function exportLocations()
+	public function exportCategories()
 	{
 		$objLocation = Location::findAll();
 		$strDelimiter = ',';
