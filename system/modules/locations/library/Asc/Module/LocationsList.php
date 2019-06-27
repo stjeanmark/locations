@@ -113,14 +113,14 @@ class LocationsList extends \Contao\Module
 				$arrLocation['link'] = $this->generateFrontendUrl($objTarget->row()) .'?alias=' .$objLocation->alias;
 			}
 			
-			$arrLocation['name'] 	= $objLocation->name;
-			$arrLocation['address'] = $objLocation->address;
-			$arrLocation['city'] 	= $objLocation->city;
-			$arrLocation['state'] 	= $objLocation->state;
-			$arrLocation['zip'] 	= $objLocation->zip;
-			$arrLocation['country'] = $objLocation->country;
-			$arrLocation['phone'] 	= $objLocation->phone;
-			$arrLocation['url'] 	= $objLocation->url;
+			$arrLocation['name'] 		= $objLocation->name;
+			$arrLocation['address']	 	= $objLocation->address;
+			$arrLocation['city'] 		= $objLocation->city;
+			$arrLocation['state'] 		= $objLocation->state;
+			$arrLocation['zip'] 		= $objLocation->zip;
+			$arrLocation['country'] 	= $objLocation->country;
+			$arrLocation['phone'] 		= $objLocation->phone;
+			$arrLocation['url'] 		= $objLocation->url;
 
 			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_location');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
@@ -157,5 +157,5 @@ class LocationsList extends \Contao\Module
 		}
 		return ($a['Name'] < $b['Name']) ? -1 : 1;
 	}
-	
+
 } 

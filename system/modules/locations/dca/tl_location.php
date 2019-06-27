@@ -21,13 +21,15 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     'config' => array
     (
         'dataContainer'               => 'Table',
+        'ptable'					  => 'tl_category',
         'enableVersioning'            => true,
         'sql' => array
         (
             'keys' => array
             (
-                'id' => 'primary',
-                'alias' => 'index'
+                'id' 	=> 	'primary',
+                'pid' 	=> 	'index',
+                'alias' =>  'index'
             )
         )
     ),
@@ -45,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         'label' => array
         (
             'fields'                  => array('name', 'address', 'city', 'state'),
-            'format'                  => '%s (%s %s, %s)'
+            'format'                  => '%s (%s %s %s, %s)'
         ),
         'global_operations' => array
         (
@@ -104,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend}name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
@@ -114,6 +116,12 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+        ),
+        'pid' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'",
+			'foreignKey'              => 'tl_category.id',
+			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
         ),
         'tstamp' => array
         (

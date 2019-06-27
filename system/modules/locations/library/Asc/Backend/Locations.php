@@ -215,4 +215,14 @@ class Locations extends \Backend
 			);
 	}
 	
+	public function getCategories() {
+		return array(
+			'Categories' => array(
+				'AR' => 'Architectual',
+				'HV' => 'HVAC',
+				'IN' => 'Industrial',
+				'ME' => 'Medical')
+			);
+	}
+	
 }
