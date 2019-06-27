@@ -13,7 +13,7 @@
  
 namespace Asc\Model;
 
-class Location extends \Model
+class Category extends \Model
 {
 	
 	/**
