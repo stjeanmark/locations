@@ -137,8 +137,8 @@ class LocationsList extends \Contao\Module
 				$arrLocation['link'] = $this->generateFrontendUrl($objTarget->row()) .'?alias=' .$objLocation->alias;
 			}
 			
-			$arrLocation['category'] 	= $objLocation->category;
 			$arrLocation['name'] 		= $objLocation->name;
+			$arrLocation['category'] 	= $objLocation->category;
 			$arrLocation['address']	 	= $objLocation->address;
 			$arrLocation['city'] 		= $objLocation->city;
 			$arrLocation['state'] 		= $objLocation->state;
@@ -151,7 +151,7 @@ class LocationsList extends \Contao\Module
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrLocation);
 			$arrStates[$strStateKey]['locations'][] = $objTemplate->parse();
-			$arrStates[$strStateKey]['locations'][] = $objTemplate->parse();
+			$arrCategories[$strCategoryKey]['locations'][] = $objTemplate->parse();
 		}
 
 		$arrTemp = $arrStates;
