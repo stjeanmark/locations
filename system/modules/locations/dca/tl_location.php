@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},categories;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
@@ -196,7 +196,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		// Details Fields
-		'sections' => array
+		'category' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
 			'exclude'                 => true,

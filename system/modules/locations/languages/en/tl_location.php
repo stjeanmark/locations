@@ -15,6 +15,7 @@
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_location']['location_legend'] 	= 'Location Details';
+$GLOBALS['TL_LANG']['tl_location']['category_legend'] 	= 'Select A Category';
 $GLOBALS['TL_LANG']['tl_location']['address_legend'] 	= 'Address Details';
 $GLOBALS['TL_LANG']['tl_location']['website_legend'] 	= 'Website Details';
 $GLOBALS['TL_LANG']['tl_location']['publish_legend'] 	= 'Publish';
