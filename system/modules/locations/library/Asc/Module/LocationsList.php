@@ -102,7 +102,6 @@ class LocationsList extends \Contao\Module
 			
 			$arrLocation = array(
 				'id'		=> $objLocation->id,
-				'pid'       => $objLocation->pid,
 				'alias'		=> $objLocation->alias,
 				'tstamp'	=> $objLocation->tstamp,
 				'timetamp'	=> \Date::parse(\Config::get('datimFormat'), $objLocation->tstamp),
@@ -114,7 +113,6 @@ class LocationsList extends \Contao\Module
 				$arrLocation['link'] = $this->generateFrontendUrl($objTarget->row()) .'?alias=' .$objLocation->alias;
 			}
 			
-			$arrLocation['pid'] 	= $objLocation->pid;
 			$arrLocation['name'] 	= $objLocation->name;
 			$arrLocation['address'] = $objLocation->address;
 			$arrLocation['city'] 	= $objLocation->city;

@@ -22,13 +22,11 @@ $GLOBALS['TL_LANG']['tl_location']['publish_legend'] 	= 'Publish';
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_location']['pid'] 				= array('Category ID', 'The ID corresponding to this reps category');
 $GLOBALS['TL_LANG']['tl_location']['alias'] 			= array('Alias', 'Auto-generated alias.');
 $GLOBALS['TL_LANG']['tl_location']['name'] 				= array('Location Name', 'Location Name');
 $GLOBALS['TL_LANG']['tl_location']['address'] 			= array('Address', 'Address');
 $GLOBALS['TL_LANG']['tl_location']['city'] 				= array('City', 'City');
 $GLOBALS['TL_LANG']['tl_location']['state'] 			= array('State', 'State');
-$GLOBALS['TL_LANG']['tl_location']['category'] 			= array('Category', 'Category');
 $GLOBALS['TL_LANG']['tl_location']['zip'] 				= array('Zip', 'Zip or Postal code');
 $GLOBALS['TL_LANG']['tl_location']['phone'] 			= array('Phone', 'Phone number');
 $GLOBALS['TL_LANG']['tl_location']['url'] 				= array('URL', 'Website link for location');

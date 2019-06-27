@@ -15,7 +15,7 @@
 * Back end modules
 */
 $GLOBALS['BE_MOD']['content']['locations'] = array(
-	'tables' => array('tl_location', 'tl_location_cat'),
+	'tables' => array('tl_location'),
 	'icon'   => 'system/modules/locations/assets/icons/location.png',
 	'exportLocations' => array('Asc\Backend\Locations', 'exportLocations')
 );

@@ -14,11 +14,11 @@
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Rep Locations List', 'Rep Locations list module.');
+$GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Locations List', 'Locations list module.');
 
 
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['locations'] = array('Rep Locations', 'Configure Rep Locations');$GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Rep Locations List', 'Rep Locations list module.');
-$GLOBALS['TL_LANG']['MOD']['location_cats'] = array('Rep Categories', 'Configure Rep Categories');$GLOBALS['TL_LANG']['FMD'][''] 	= array('Rep Category List', 'Rep Category module.');
+$GLOBALS['TL_LANG']['MOD']['locations'] = array('Locations', 'Configure Locations');
+
