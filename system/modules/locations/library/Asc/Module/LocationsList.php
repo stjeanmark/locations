@@ -84,6 +84,7 @@ class LocationsList extends \Contao\Module
 		}
 
 		$arrStates = array();
+		$arrCategories = array();
 		
 		// Generate List
 		while ($objLocation->next())
