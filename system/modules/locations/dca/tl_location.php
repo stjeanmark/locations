@@ -195,6 +195,18 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
+		// Details Fields
+		'sections' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'checkboxWizard',
+			'eval'                    => array('multiple'=>false, 'csv'=>',', 'tl_class'=>'clr'),
+			'foreignKey'              => 'tl_category.id',
+			'relation'                => array('type'=>'hasMany', 'load'=>'lazy'),	
+			'sql'                     => "mediumtext NULL"
+		),
 		'url' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['url'],

@@ -20,6 +20,6 @@ $GLOBALS['TL_LANG']['FMD']['locations_list'] 	= array('Locations List', 'Locatio
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['locations'] = array('Locations', 'Configure Locations');
-$GLOBALS['TL_LANG']['MOD']['categories'] = array('Categories', 'Configure Categories');
+$GLOBALS['TL_LANG']['MOD']['locations'] = array('Rep Locations', 'Configure Rep Locations');
+$GLOBALS['TL_LANG']['MOD']['categories'] = array('Rep Categories', 'Configure Rep Categories');
 
