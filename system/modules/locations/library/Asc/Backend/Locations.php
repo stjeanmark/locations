@@ -221,7 +221,7 @@ class Locations extends \Backend
 				'AR' => 'Architectual',
 				'HV' => 'HVAC',
 				'IN' => 'Industrial',
-				'ME' => 'Medical'
+				'ME' => 'Medical')
 			);
 	}
 	
