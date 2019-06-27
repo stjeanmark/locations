@@ -39,21 +39,21 @@ $GLOBALS['TL_DCA']['tl_category'] = array
         'sorting' => array
         (
             'mode'                    => 1,
-            'fields'                  => array('state', 'name'),
+            'fields'                  => array('name'),
             'flag'                    => 1,
             'panelLayout'             => 'filter;search,limit'
         ),
         'label' => array
         (
-            'fields'                  => array('name', 'address', 'city', 'state'),
-            'format'                  => '%s (%s %s, %s)'
+            'fields'                  => array('name'),
+            'format'                  => '%s'
         ),
         'global_operations' => array
         (
             'export' => array
             (
                 'label'               => 'Export Locations CSV',
-                'href'                => 'key=exportLocations',
+                'href'                => 'key=exportCategories',
                 'icon'                => 'system/modules/locations/assets/icons/file-export-icon-16.png'
             ),
             'all' => array
