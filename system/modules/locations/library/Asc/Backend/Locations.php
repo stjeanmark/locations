@@ -215,13 +215,13 @@ class Locations extends \Backend
 			);
 	}
 	
-	public function getCategories() {
-		
-		$dbObj = \Database::getInstance()->prepare("SELECT * FROM tl_category")->execute();  
+	public function getCategories() { 
 		$cats = array();
-		while($dbObj->next())
+		$this->import('Database');
+		$result = $this->Database->prepare("SELECT * FROM partnerpool")->execute();
+		while($result->next())
 		{
-			array_push($cats,array($dbObj->id,$dbObj->name));
+			array_push($cats,array($result->id,$result->name));
 		}
 		return $cats;
 		
