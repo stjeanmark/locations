@@ -124,10 +124,10 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'inputType'               => 'radio',
 			'options'                  => array 
 											( 
-												'1', 
-												'2',
-												'3',
-												'4'
+												array('1','One'), 
+												array('2','Two'),
+												array('3','Three'),
+												array('4','Four')
 											),       
 			'eval'                    => array('multiple'=>false, 'mandatory'=>true,'tl_class'=>'clr') 
 			
