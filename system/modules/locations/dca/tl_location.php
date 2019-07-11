@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         (
             'sql'                     => "int(10) unsigned NOT NULL",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
-			'inputType'               => 'radio', 
+			'inputType'               => 'radio',
 			'options'                  => array 
 											( 
 												'1', 
@@ -129,7 +129,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 												'3',
 												'4'
 											),       
-			'eval'                    => array('multiple'=>false, 'mandatory'=true,'tl_class'=>'clr') 
+			'eval'                    => array('multiple'=>false, 'mandatory'=>true,'tl_class'=>'clr') 
 			
         ),
         'tstamp' => array
