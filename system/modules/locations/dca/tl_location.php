@@ -73,6 +73,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
                 'href'                => 'act=edit',
                 'icon'                => 'edit.gif'
             ),
+			
             'copy' => array
             (
                 'label'               => &$GLOBALS['TL_LANG']['tl_location']['copy'],
@@ -105,20 +106,57 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},categories;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},pid;{website_legend},url;{publish_legend},published;'
     ),
  
     // Fields
     'fields' => array
     (
 	
+	
+	
+	$GLOBALS['TL_DCA']['tl_page']['fields']['firebug_options'] = array 
+( 
+    'label'                   => &$GLOBALS['TL_LANG']['tl_page']['firebug_options'],  
+    'inputType'               => 'checkbox', 
+    'options'                  => array 
+                                    ( 
+                                        'saveCookies', 
+                                        'startOpened', 
+                                        'startInNewWindow', 
+                                        'showIconWhenHidden', 
+                                        'overrideConsole', 
+                                        'ignoreFirebugElements', 
+                                        'disableXHRListener', 
+                                        'disableWhenFirebugActive', 
+                                        'enableTrace', 
+                                        'enablePersistent' 
+                                    ), 
+    'default'                  => array('showIconWhenHidden','disableWhenFirebugActive'),         
+    'eval'                    => array('multiple'=>true, 'tl_class'=>'clr') 
+);  
+	
+	
+	
+	
         'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
         ),
+		
 		'pid' => array
         (
-            'sql'                     => "int(10) unsigned NOT NULL"
+            'sql'                     => "int(10) unsigned NOT NULL",
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
+			'inputType'               => 'checkbox', 
+			'options'                  => array 
+											( 
+												'1', 
+												'2'
+											), 
+			'default'                  => array('1'),         
+			'eval'                    => array('multiple'=>false, 'tl_class'=>'clr') 
+			
         ),
         'tstamp' => array
         (
