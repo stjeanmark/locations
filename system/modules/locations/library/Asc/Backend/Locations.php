@@ -218,7 +218,7 @@ class Locations extends \Backend
 	public function getCategories() { 
 		$cats = array();
 		$this->import('Database');
-		$result = $this->Database->prepare("SELECT * FROM partnerpool")->execute();
+		$result = $this->Database->prepare("SELECT * FROM tl_category")->execute();
 		while($result->next())
 		{
 			array_push($cats,array($result->id,$result->name));
