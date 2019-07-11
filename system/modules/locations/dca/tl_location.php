@@ -127,7 +127,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 												'1', 
 												'2',
 												'3',
-												'4',
+												'4'
 											),       
 			'eval'                    => array('multiple'=>false, 'mandatory'=true,'tl_class'=>'clr') 
 			
