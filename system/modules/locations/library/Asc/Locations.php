@@ -20,7 +20,7 @@ use Asc\Model\Location;
  */
 class Locations {
 	
-	public function getStates()
+	public function getCategories()
     {		
         return array(
 			"United States" => array(
