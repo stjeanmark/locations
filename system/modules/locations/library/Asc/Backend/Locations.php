@@ -221,8 +221,8 @@ class Locations extends \Backend
 		$result = $this->Database->prepare("SELECT * FROM tl_category")->execute();
 		while($result->next())
 		{
-			$newCat = [$result->id => $result->name];
-			array_push($cats,$newCat);
+            $second_array = array($result->id=>$result->name); 
+            $cats = array_merge((array)$cats, (array)$second_array); 
 		}
 		return $cats;
 		
