@@ -112,33 +112,6 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Fields
     'fields' => array
     (
-	
-	
-	
-	$GLOBALS['TL_DCA']['tl_page']['fields']['firebug_options'] = array 
-( 
-    'label'                   => &$GLOBALS['TL_LANG']['tl_page']['firebug_options'],  
-    'inputType'               => 'checkbox', 
-    'options'                  => array 
-                                    ( 
-                                        'saveCookies', 
-                                        'startOpened', 
-                                        'startInNewWindow', 
-                                        'showIconWhenHidden', 
-                                        'overrideConsole', 
-                                        'ignoreFirebugElements', 
-                                        'disableXHRListener', 
-                                        'disableWhenFirebugActive', 
-                                        'enableTrace', 
-                                        'enablePersistent' 
-                                    ), 
-    'default'                  => array('showIconWhenHidden','disableWhenFirebugActive'),         
-    'eval'                    => array('multiple'=>true, 'tl_class'=>'clr') 
-);  
-	
-	
-	
-	
         'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
