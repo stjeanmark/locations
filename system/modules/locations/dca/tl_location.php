@@ -122,12 +122,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
             'sql'                     => "int(10) unsigned NOT NULL",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
 			'inputType'               => 'radio',
-			'options'                 => array(
-											'1' => 'One',
-											'2' => 'Two',
-											'3' => 'Three',
-											'4' => 'Four'
-										),       
+			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),										
 			'eval'                    => array('multiple'=>false, 'mandatory'=>true,'tl_class'=>'clr') 
 			
         ),
