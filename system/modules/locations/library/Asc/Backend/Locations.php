@@ -217,12 +217,21 @@ class Locations extends \Backend
 	
 	public function getCategories() {
 		
-		return array(
-			'1' => 'Onee',
-			'2' => 'Twoo',
-			'3' => 'Threee',
-			'4' => 'Fourr'
-		);
+		$dbObj = \Database::getInstance()->prepare("SELECT * FROM tl_category")->execute();  
+		$cats = array();
+		while($dbObj->next())
+		{
+			array_push($cats,array($dbObj->id,$dbObj->name));
+		}
+		return $cats;
+		
+		
+		#return array(
+		#	'1' => 'Onee',
+		#	'2' => 'Twoo',
+		#	'3' => 'Threee',
+		#	'4' => 'Fourr'
+		#);
 	}
 	
 }
