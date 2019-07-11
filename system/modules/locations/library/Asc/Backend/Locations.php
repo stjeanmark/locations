@@ -142,6 +142,6 @@ class Locations extends \Backend
 			'2' => 'Twoo',
 			'3' => 'Threee',
 			'4' => 'Fourr'
-		)
+		);
 	}
 }	
