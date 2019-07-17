@@ -218,11 +218,10 @@ class Locations extends \Backend
 	public function getCategories() { 
 		$cats = array();
 		$this->import('Database');
-		$result = $this->Database->prepare("SELECT * FROM tl_category")->execute();
+		$result = $this->Database->prepare("SELECT * FROM tl_category WHERE published=1")->execute();
 		while($result->next())
 		{
-            $second_array = array($result->id=>$result->name); 
-            $cats = array_merge((array)$cats, (array)$second_array); 
+			$cats = $cats + array($result->id => $result->name);
 		}
 		return $cats;
 		

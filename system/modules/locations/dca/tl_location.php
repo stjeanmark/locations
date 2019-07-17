@@ -119,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 		
 		'pid' => array
         (
-            'sql'                     => "int(10) unsigned NOT NULL",
+            'sql'                     => "varchar(255) NOT NULL default ''",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
 			'inputType'               => 'radio',
 			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),										
