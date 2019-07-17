@@ -22,7 +22,7 @@ ClassLoader::addClasses(array
 	'Asc\Model\Location' 		=> 'system/modules/locations/library/Asc/Model/Location.php',
 	'Asc\Model\Category' 		=> 'system/modules/locations/library/Asc/Model/Category.php',
 	'Asc\Locations'		 		=> 'system/modules/locations/library/Asc/Locations.php',
-	'Asc\Categories'		 	=> 'system/modules/locations/library/Asc/Categories.php',
+	'Asc\Categories'		 	=> 'system/modules/locations/library/Asc/Categories.php'
 ));
 
 /**
