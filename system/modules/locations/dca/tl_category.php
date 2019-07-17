@@ -90,7 +90,7 @@ $GLOBALS['TL_DCA']['tl_category'] = array
 				'label'               => &$GLOBALS['TL_LANG']['tl_category']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('Asc\Backend\Locations', 'toggleIcon')
+				'button_callback'     => array('Asc\Backend\Categories', 'toggleIcon')
 			),
             'show' => array
             (
