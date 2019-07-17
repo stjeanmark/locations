@@ -46,9 +46,6 @@ class Categories extends \Backend
 
 	public function toggleVisibility($intId, $blnVisible, DataContainer $dc=null)
 	{
-		$objVersions = new Versions('tl_category', $intId);
-		$objVersions->initialize();
-
 		// Trigger the save_callback
 		if (is_array($GLOBALS['TL_DCA']['tl_category']['fields']['published']['save_callback']))
 		{
@@ -70,7 +67,6 @@ class Categories extends \Backend
 		$this->Database->prepare("UPDATE tl_category SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$objVersions->create();
 		$this->log('A new version of record "tl_category.id='.$intId.'" has been created'.$this->getParentEntries('tl_category', $intId), __METHOD__, TL_GENERAL);
 	}
 	
