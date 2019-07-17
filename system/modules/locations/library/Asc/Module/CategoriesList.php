@@ -16,7 +16,7 @@ namespace Asc\Module;
 use Asc\Model\Category;
 use Asc\Categories; 
  
-class LocationsList extends \Contao\Module
+class CategorieList extends \Contao\Module
 {
  
     /**
