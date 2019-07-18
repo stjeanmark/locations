@@ -21,14 +21,11 @@ $(document).ready(function() {
 	var module = $(this);
 	var selector = module.find('select.locations_state_selector');
 	var catSelector = module.find('select.locations_category_selector');
-	var cat;
 	module.find('div.state').hide();
 	selector.change(function() {
 		module.find('div.state').hide();		
 		state = selector.find('option:selected').val();
-		cat = catSelector.find('option:selected').val();
-		alert(cat);
-		var showEl = module.find('div.state_' + cat + '_' +state);
+		var showEl = module.find('div.state_' + state);
 		if (showEl.length > 0) {
 			showEl.show();
 		} else {

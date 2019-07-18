@@ -1,4 +1,4 @@
-<div class="location_full block<?= $this->class ?>">
+<div class="location_full block<?= $this->class ?> cat_<?php echo $this->pid; ?>">
 	<div class='name'><?php echo $this->name; ?></div>
 	<div class='address'>
 		<?php echo $this->address; ?><br>
