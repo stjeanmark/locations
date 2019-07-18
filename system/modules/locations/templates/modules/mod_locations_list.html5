@@ -1,8 +1,14 @@
 <div class="mod_locations_list">
+	<select name="locations_category_selector" class="locations_category_selector">
+		<option value="">Select Category...</option>
+		<option value"1">Medical</option>
+	</select>
+
+
   <?php if (empty($this->states)): ?>
     <p class="empty"><?= $this->empty ?></p>
   <?php else: ?>
-	<select name="locations_state_selector" class="locations_state_selector"><?= $this->stateOptions ?></select>
+	<select name="locations_state_selector" class="locations_state_selector" disabled><?= $this->stateOptions ?></select>
     <?php foreach($this->states as $state): ?>
 		<div class='state state_<?php echo $state['abbr']; ?>'>
 			<h2 class='state_name'><?php echo $state['name']; ?></h2>
