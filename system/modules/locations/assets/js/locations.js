@@ -2,6 +2,13 @@
 $(document).ready(function() {
 	
 	$("select.locations_category_selector").change(function() {
+		$("select.locations_state_selector").prop('disabled', true);
+		$('select.locations_state_selector').prop('selectedIndex',0);
+		$('div.mod_locations_list').each(function(i, cte) {
+				var module = $(this);
+				var selector = module.find('select.locations_state_selector');
+				module.find('div.state').hide();
+			  });
 		if ($(this).val() != '') {
 			$("select.locations_state_selector").prop('disabled', false);
 		}
