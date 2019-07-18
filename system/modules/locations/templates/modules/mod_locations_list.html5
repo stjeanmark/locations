@@ -4,13 +4,12 @@
 		<option value"1">Medical</option>
 	</select>
 
-
   <?php if (empty($this->states)): ?>
     <p class="empty"><?= $this->empty ?></p>
   <?php else: ?>
 	<select name="locations_state_selector" class="locations_state_selector" disabled><?= $this->stateOptions ?></select>
     <?php foreach($this->states as $state): ?>
-		<div class='state state_<?php echo $state['abbr']; ?>'>
+		<div class='state state_<?php echo $state['pid']; ?>_<?php echo $state['abbr']; ?>'>
 			<h2 class='state_name'><?php echo $state['name']; ?></h2>
 			<?= implode('', $state['locations']) ?>
 		</div>
