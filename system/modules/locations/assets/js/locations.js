@@ -1,10 +1,10 @@
 (function($) {
 $(document).ready(function() {
 	
-	$('#locations_category_selector').change(function() {
-		$('#locations_state_selector').prop('disabled', true);
-		if ($(this).val() != '') {
-			$('#locations_state_selector').prop('disabled', false);
+	$("select[value='locations_category_selector']").change(function() {
+		$("select[value='locations_state_selector']").prop('disabled', true);
+		if ($(this).val() != 'Select Option...') {
+			$("select[value='locations_state_selector']").prop('disabled', false);
 		}
 	});
 
