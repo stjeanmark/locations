@@ -1,7 +1,18 @@
 <div class="mod_locations_list">
 	<select name="locations_category_selector" class="locations_category_selector">
 		<option value="">Select Category...</option>
-		<option value="1">Medical</option>
+		
+		<?php
+		
+		$this->import('Database');
+		$result = $this->Database->prepare("SELECT * FROM tl_category WHERE published=1")->execute();
+		while($result->next())
+		{
+			?> <option value="<?php echo $result->id; ?>"><?php echo $result->name; ?></option> <?php
+		}
+		
+		?>
+		
 	</select>
 
 
