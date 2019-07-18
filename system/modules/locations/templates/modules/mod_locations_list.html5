@@ -1,7 +1,7 @@
 <div class="mod_locations_list">
 	<select name="locations_category_selector" class="locations_category_selector">
 		<option value="">Select Category...</option>
-		<option value"1">Medical</option>
+		<option value="1">Medical</option>
 	</select>
 
 

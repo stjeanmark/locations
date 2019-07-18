@@ -25,6 +25,11 @@ $(document).ready(function() {
 	selector.change(function() {
 		module.find('div.state').hide();		
 		state = selector.find('option:selected').val();
+		cat = catSelector.find('option:selected').val();
+		module.find('div.location_full').hide();
+		var catL = 'div.cat_' + cat;
+		alert(catL);
+		module.find(catL).show();
 		var showEl = module.find('div.state_' + state);
 		if (showEl.length > 0) {
 			showEl.show();
