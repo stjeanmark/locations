@@ -95,6 +95,7 @@ class LocationsList extends \Contao\Module
 			if (!array_key_exists($strStateKey, $arrStates)) {
 				$arrStates[$strStateKey] = array(
 					"name" 			=> $strStateName,
+					'pid'			=> $objLocation->id,
 					"abbr"			=> $strStateKey,
 					"locations"		=> array()
 				);
