@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         (
             'sql'                     => "varchar(255) NOT NULL default ''",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
-			'inputType'               => 'radio',
+			'inputType'               => 'checkbox',
 			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),										
 			'eval'                    => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
 			
