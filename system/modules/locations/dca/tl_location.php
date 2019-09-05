@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},pid;{website_legend},url;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
     ),
  
     // Fields
@@ -121,9 +121,9 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         (
             'sql'                     => "varchar(255) NOT NULL default ''",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
-			'inputType'               => 'checkbox',
+			'inputType'               => 'radio',
 			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),										
-			'eval'                    => array('multiple'=>false, 'mandatory'=>true,'tl_class'=>'clr') 
+			'eval'                    => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
 			
         ),
         'tstamp' => array
