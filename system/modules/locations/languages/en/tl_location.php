@@ -32,6 +32,7 @@ $GLOBALS['TL_LANG']['tl_location']['zip'] 				= array('Zip', 'Zip or Postal code
 $GLOBALS['TL_LANG']['tl_location']['phone'] 			= array('Phone', 'Phone number');
 $GLOBALS['TL_LANG']['tl_location']['categories'] 		= array('Categories', 'Categories');
 $GLOBALS['TL_LANG']['tl_location']['url'] 				= array('URL', 'Website link for location');
+$GLOBALS['TL_LANG']['tl_location']['email'] 			= array('Email Address', 'Email address for location');
 $GLOBALS['TL_LANG']['tl_location']['published'] 		= array('Published', 'Show this record on the front end.');
  
  /**
