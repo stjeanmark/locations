@@ -215,7 +215,6 @@ class Locations extends \Backend
 		$cats = array();
 		$this->import('Database');
 		$result = $this->Database->prepare("SELECT * FROM tl_category WHERE published=1")->execute();
-		echo "<script type='text/javascript'>alert('". $result ."');</script>";
 		while($result->next())
 		{
 			$cats = $cats + array($result->id => $result->name);
