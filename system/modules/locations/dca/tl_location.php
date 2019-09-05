@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
+        'default'                     => '{location_legend},name,alias;{address_legend},address,city,state,listing_zip,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
     ),
  
     // Fields
@@ -182,10 +182,18 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
+		'listing_zip' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['listing_zip'],
+			'inputType'               => 'text',
+			'default'				  => '',
+			'eval'                    => array('tl_class'=>'clr w50', 'rgxp'=>'listing_zip'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
 		'zip' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['zip'],
-			'inputType'               => 'text',
+			'inputType'               => 'textarea',
 			'default'				  => '',
 			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "mediumtext NOT NULL default ''"
