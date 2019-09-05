@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
         (
             'sql'                     => "varchar(255) NOT NULL default ''",
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['categories'],
-			'inputType'               => 'radio',
+			'inputType'               => 'checkbox',
 			'options_callback'		  => array('Asc\Backend\Locations', 'getCategories'),										
 			'eval'                    => array('multiple'=>false, 'mandatory'=>true,'tl_class'=>'clr') 
 			
@@ -188,7 +188,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'inputType'               => 'text',
 			'default'				  => '',
 			'eval'                    => array('tl_class'=>'clr w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'sql'                     => "mediumtext NOT NULL default ''"
 		),
 		'phone' => array
 		(
@@ -204,6 +204,14 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'inputType'               => 'text',
 			'default'				  => '',
 			'eval'                    => array('tl_class'=>'clr w50', 'rgxp'=>'url'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'email' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['email'],
+			'inputType'               => 'text',
+			'default'				  => '',
+			'eval'                    => array('tl_class'=>'clr w50', 'rgxp'=>'email'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'published' => array
