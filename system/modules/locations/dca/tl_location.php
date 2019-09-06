@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'inputType'               => 'text',
 			'default'				  => '',
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
+			'eval'                    => array('mandatory'=>false, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'address' => array
