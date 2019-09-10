@@ -32,5 +32,4 @@
 		No locations in this region.
 	</div>
 		
-  <?php endif; ?>
 </div>
