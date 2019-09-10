@@ -35,7 +35,9 @@ $(document).ready(function() {
 		cat = catSelector.find('option:selected').val();
 		module.find('div.location_full').hide();
 		var catL = 'div.cat_' + cat;
-		alert(catL);
+		//alert is for debugging, comment out when live
+		//alert(catL);
+		
 		module.find(catL).show();
 		var showEl = module.find('div.state_' + state);
 		if (showEl.length > 0) {
