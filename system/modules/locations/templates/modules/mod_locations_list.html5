@@ -17,7 +17,7 @@
 	
 	<!–– input for entering in the zip code, automatically update results on input ––>
 	<p class="enter_zip">Enter your ZIP code</p>
-	<input name="locations_zip_input" class="locations_zip_input" type="text" name="zip"><br>
+	<input name="locations_zip_input" class="locations_zip_input" type="text" name="zip" disabled><br>
 
 	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
     <?php foreach($this->states as $state): ?>
