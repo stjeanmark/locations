@@ -1,4 +1,5 @@
-<div class="location_full block<?= $this->class ?> cat_<?php echo $this->pid; ?>">
+<!–– This is for each listing, list off each one ––>
+<div class="size50 location_full block<?= $this->class ?> cat_<?php echo $this->pid; ?>">
 	<div class='name'><?php echo $this->name; ?></div>
 	<div class='address'>
 		<?php echo $this->address; ?><br>
