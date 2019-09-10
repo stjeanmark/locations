@@ -23,11 +23,7 @@ $(document).ready(function() {
 		//if no category selected, keep ZIP disabled	
 		else {
 			$("input.locations_zip_input").prop('disabled', true);
-			//focus on ZIP input
-			$("input.locations_zip_input").focus();
-			
-			//$('select.locations_state_selector').prop('selectedIndex',0);
-			
+		
 			//need to investigate more
 			  $('div.mod_locations_list').each(function(i, cte) {
 				var module = $(this);
@@ -35,9 +31,22 @@ $(document).ready(function() {
 				module.find('div.state').hide();
 			  });
 		}
+			
 	});
 	
+	
+	//when changing zip
+	$("input.locations_zip_input").keyup(function(){
+	
+		// go through each listing and check if category AND zip match
+		alert(this.value);
+	});
+
+	
 	//this is the big one, showing or now showing locations
+	
+	
+	/*
   $('div.mod_locations_list').each(function(i, cte) {
 	var module = $(this);
 	var selector = module.find('select.locations_state_selector');
@@ -59,6 +68,7 @@ $(document).ready(function() {
 	});
   });
   $('div.mod_locations_list select.locations_state_selector').first().change();
+  */
 });
 })(jQuery);
 
