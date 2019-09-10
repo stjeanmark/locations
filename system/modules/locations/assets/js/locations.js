@@ -1,21 +1,34 @@
+//This is the code that updates the page as the user uses it
+
 (function($) {
 $(document).ready(function() {
 	
+	//when making a change to the category selector
 	$("select.locations_category_selector").change(function() {
-		$("select.locations_state_selector").prop('disabled', true);
+		//automatically disable it every time its changed
+		//$("input.locations_zip_input").prop('disabled', true);
+		
+		//not sure what this section does, I will find out
 		$('select.locations_state_selector').prop('selectedIndex',0);
 		$('div.mod_locations_list').each(function(i, cte) {
 				var module = $(this);
 				var selector = module.find('select.locations_state_selector');
 				module.find('div.state').hide();
 			  });
+			  
+		//if a category is selected, enabled ZIP input
 		if ($(this).val() != '') {
-			$("select.locations_state_selector").prop('disabled', false);
+			$("input.locations_zip_input").prop('disabled', false);
 		}
+		//if no category selected, keep ZIP disabled	
 		else {
-			$("select.locations_state_selector").prop('disabled', true);
-			$('select.locations_state_selector').prop('selectedIndex',0);
+			$("input.locations_zip_input").prop('disabled', true);
+			//focus on ZIP input
+			$("input.locations_zip_input").focus();
 			
+			//$('select.locations_state_selector').prop('selectedIndex',0);
+			
+			//need to investigate more
 			  $('div.mod_locations_list').each(function(i, cte) {
 				var module = $(this);
 				var selector = module.find('select.locations_state_selector');
@@ -24,6 +37,7 @@ $(document).ready(function() {
 		}
 	});
 	
+	//this is the big one, showing or now showing locations
   $('div.mod_locations_list').each(function(i, cte) {
 	var module = $(this);
 	var selector = module.find('select.locations_state_selector');
@@ -35,9 +49,6 @@ $(document).ready(function() {
 		cat = catSelector.find('option:selected').val();
 		module.find('div.location_full').hide();
 		var catL = 'div.cat_' + cat;
-		//alert is for debugging, comment out when live
-		//alert(catL);
-		
 		module.find(catL).show();
 		var showEl = module.find('div.state_' + state);
 		if (showEl.length > 0) {
