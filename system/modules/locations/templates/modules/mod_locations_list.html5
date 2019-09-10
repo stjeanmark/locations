@@ -1,6 +1,6 @@
 <div class="mod_locations_list">
 	<select name="locations_category_selector" class="locations_category_selector">
-		<option value="">Select Category...</option>
+		<option value="">Select A Category...</option>
 		
 		<?php
 		
@@ -14,7 +14,9 @@
 		?>
 		
 	</select>
-
+	
+	<p>Enter your ZIP code</p>
+	<input name="locations_zip_input" class="locations_zip_input" type="text" name="zip"><br>
 
   <?php if (empty($this->states)): ?>
     <p class="empty"><?= $this->empty ?></p>
