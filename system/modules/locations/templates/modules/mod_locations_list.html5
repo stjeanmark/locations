@@ -21,10 +21,7 @@
 
 	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
     <?php foreach($this->states as $state): ?>
-		<div class='state state_<?php echo $state['abbr']; ?>'>
-			<h2 class='state_name'><?php echo $state['name']; ?></h2>
-			<?= implode('', $state['locations']) ?>
-		</div>
+		<?= implode('', $state['locations']) ?>
 	<?php endforeach; ?>
 	
 	<!–– starts hidden, JS makes visible if no match on input ––>
