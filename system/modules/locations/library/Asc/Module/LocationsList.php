@@ -115,16 +115,20 @@ class LocationsList extends \Contao\Module
 				$arrLocation['link'] = $this->generateFrontendUrl($objTarget->row()) .'?alias=' .$objLocation->alias;
 			}
 			
+			//$this->Template->categories = \StringUtil::deserialize(YOUR_VARIABLE_HERE);
 			
-			$arrLocation['pid'] 		= $objLocation->pid;
-			$arrLocation['name'] 		= $objLocation->name;
-			$arrLocation['address']	 	= $objLocation->address;
-			$arrLocation['city'] 		= $objLocation->city;
-			$arrLocation['state'] 		= $objLocation->state;
-			$arrLocation['zip'] 		= $objLocation->zip;
-			$arrLocation['country'] 	= $objLocation->country;
-			$arrLocation['phone'] 		= $objLocation->phone;
-			$arrLocation['url'] 		= $objLocation->url;
+			$arrLocation['pid'] 			= \StringUtil::deserialize($objLocation->pid);
+			$arrLocation['name'] 			= $objLocation->name;
+			$arrLocation['contact_name']	= $objLocation->contact_name;
+			$arrLocation['address']	 		= $objLocation->address;
+			$arrLocation['address_2']	 	= $objLocation->address_2;
+			$arrLocation['city'] 			= $objLocation->city;
+			$arrLocation['state'] 			= $objLocation->state;
+			$arrLocation['zip'] 			= $objLocation->zip;
+			$arrLocation['listing_zip']		= $objLocation->listing_zip;
+			$arrLocation['country'] 		= $objLocation->country;
+			$arrLocation['phone'] 			= $objLocation->phone;
+			$arrLocation['url'] 			= $objLocation->url;
 
 			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_location');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
