@@ -4,7 +4,7 @@
 	<div class='address'>
 		<?php if($this->contact_name != ""){echo $this->contact_name . "<br>";} ?>
 		<?php echo $this->address; ?><br>
-		<?php if($this->address_2 != ""){echo $this->address . "<br>";} ?>
+		<?php if($this->address_2 != ""){echo $this->address_2 . "<br>";} ?>
 		<?php echo $this->city; ?>, <?php echo $this->state; ?><br>
 		<?php echo $this->listing_zip; ?><br>
 		<a href="tel:<?php echo $this->phone; ?>"><?php echo $this->phone; ?></a>
