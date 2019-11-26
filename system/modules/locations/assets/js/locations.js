@@ -21,7 +21,8 @@ $(document).ready(function() {
 	
 		//if a category is selected, enabled ZIP input
 		if ($(this).val() !== '') {
-			$("input.locations_zip_input").prop('disabled', false);
+			$("input.locations_zip_input").show();
+			$("p.enter_zip").show();
 			
 			
 			
@@ -32,6 +33,7 @@ $(document).ready(function() {
 			//get the category selector's value
 			var catVal = $("select.locations_category_selector").val();
 			var zipVal = $("input.locations_zip_input").val();
+			
 		
 			var cat_found = 0;
 			var zip_found = 0;
@@ -58,7 +60,19 @@ $(document).ready(function() {
 						zip_found = 1;
 						//alert("found_2");
 					}
+					if(cat_found == 1 && zip_found == 1)
+					{
+						//make parent div visible
+						//$(this).parent().show();
+						wasFound = 1;
+						$(this).parent().fadeIn();
+						//alert($(this).parent().html());
+					}
+					counter = 0;
+					cat_found = 0;
+					zip_found = 0;
 				}
+				/*
 				if(counter == 4)
 				{
 					if(cat_found == 1 && zip_found == 1)
@@ -73,6 +87,7 @@ $(document).ready(function() {
 					cat_found = 0;
 					zip_found = 0;
 				}
+				*/
 
 			});
 				if(wasFound == 0)
@@ -89,7 +104,9 @@ $(document).ready(function() {
 		}
 		//if no category selected, keep ZIP disabled	
 		else {
-			$("input.locations_zip_input").prop('disabled', true);
+			$("input.locations_zip_input").hide();
+			$("input.locations_zip_input").val("");
+			$("p.enter_zip").hide();
 		}	
 	});
 	
@@ -110,7 +127,7 @@ $(document).ready(function() {
 			//get the category selector's value
 			var catVal = $("select.locations_category_selector").val();
 			var zipVal = $("input.locations_zip_input").val();
-		
+			
 			var cat_found = 0;
 			var zip_found = 0;
 			var counter = 0;
@@ -136,9 +153,6 @@ $(document).ready(function() {
 						zip_found = 1;
 						//alert("found_2");
 					}
-				}
-				if(counter == 4)
-				{
 					if(cat_found == 1 && zip_found == 1)
 					{
 						//make parent div visible
@@ -151,12 +165,29 @@ $(document).ready(function() {
 					cat_found = 0;
 					zip_found = 0;
 				}
+				/*
+				if(counter == 4)
+				{
+					if(cat_found == 1 && zip_found == 1)
+					{
+						//make parent div visible
+						//$(this).parent().show();
+						$(this).parent().fadeIn();
+						wasFound = 1;
+						//alert($(this).parent().html());
+					}
+					counter = 0;
+					cat_found = 0;
+					zip_found = 0;
+				}
+				*/
 
 			});
 				if(wasFound == 0)
 					$("div.state_not_found").fadeIn();
 				else
 					$("div.state_not_found").hide();
+					
 		}
 		
 		//alert(catVal);
