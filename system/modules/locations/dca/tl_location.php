@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,contact_name,alias;{address_legend},address,address_2,city,state,listing_zip,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
+        'default'                     => '{location_legend},name,contact_name,contact_name_2,contact_name_3,alias;{address_legend},address,address_2,city,state,listing_zip,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
     ),
  
     // Fields
@@ -160,6 +160,24 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 		'contact_name' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['contact_name'],
+			'inputType'               => 'text',
+			'default'				  => '',
+			'search'                  => true,
+			'eval'                    => array('mandatory'=>false, 'tl_class'=>'clr w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+	    	'contact_name_2' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['contact_name_2'],
+			'inputType'               => 'text',
+			'default'				  => '',
+			'search'                  => true,
+			'eval'                    => array('mandatory'=>false, 'tl_class'=>'clr w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+	    	'contact_name_3' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['contact_name_3'],
 			'inputType'               => 'text',
 			'default'				  => '',
 			'search'                  => true,
