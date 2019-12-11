@@ -119,7 +119,9 @@ class LocationsList extends \Contao\Module
 			
 			$arrLocation['pid'] 			= \StringUtil::deserialize($objLocation->pid);
 			$arrLocation['name'] 			= $objLocation->name;
-			$arrLocation['contact_name']	= $objLocation->contact_name;
+			$arrLocation['contact_name']		= $objLocation->contact_name;
+			$arrLocation['contact_name_2']		= $objLocation->contact_name_2;
+			$arrLocation['contact_name_3']		= $objLocation->contact_name_3;
 			$arrLocation['address']	 		= $objLocation->address;
 			$arrLocation['address_2']	 	= $objLocation->address_2;
 			$arrLocation['city'] 			= $objLocation->city;
