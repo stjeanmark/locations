@@ -3,6 +3,8 @@
 	<div class='name'><?php echo $this->name; ?></div>
 	<div class='address'>
 		<?php if($this->contact_name != ""){echo $this->contact_name . "<br>";} ?>
+		<?php if($this->contact_name_2 != ""){echo $this->contact_name_2 . "<br>";} ?>
+		<?php if($this->contact_name_3 != ""){echo $this->contact_name_3 . "<br>";} ?>
 		<?php echo $this->address; ?><br>
 		<?php if($this->address_2 != ""){echo $this->address_2 . "<br>";} ?>
 		<?php echo $this->city; ?>, <?php echo $this->state; ?><br>
