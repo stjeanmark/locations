@@ -102,10 +102,10 @@ $(document).ready(function() {
 			
 		}
 		else {
-			console.log("Canadian");
+			//console.log("Canadian");
 			
 			//if the zip is the right characters in length or longer
-			if($("input.locations_zip_input").val().length >=7 )
+			if($("input.locations_zip_input").val().length >=3 )
 			{
 				//get the category selector's value
 				var catVal = $("select.locations_category_selector").val();
@@ -287,7 +287,7 @@ $(document).ready(function() {
 			//console.log("Canadian");
 
 			//if the zip is the right characters in length or longer
-			if($(this).val().length >=7 )
+			if($(this).val().length >=3 )
 			{
 				//get the category selector's value
 				var catVal = $("select.locations_category_selector").val();
