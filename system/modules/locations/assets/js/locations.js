@@ -2,6 +2,10 @@
 (function($) {
 $(document).ready(function() {
 
+    $("input.locations_zip_input").hide();
+	$("input.locations_zip_input").val("");
+	$("p.enter_zip").hide();
+
 	//the page is fully loaded, show our search boxes
 	$("div.mod_locations_list").fadeIn();
 
