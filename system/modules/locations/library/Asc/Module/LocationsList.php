@@ -13,6 +13,7 @@
   
 namespace Asc\Module;
  
+use Asc\Model\Category;
 use Asc\Model\Location;
 use Asc\Locations; 
  
@@ -128,6 +129,9 @@ class LocationsList extends \Contao\Module
 			$arrLocation['state'] 			= $objLocation->state;
 			$arrLocation['zip'] 			= $objLocation->zip;
 			$arrLocation['listing_zip']		= $objLocation->listing_zip;
+
+			$arrLocation['territory']       = $objLocation->territory;
+			
 			$arrLocation['country'] 		= $objLocation->country;
 			$arrLocation['phone'] 			= $objLocation->phone;
 			$arrLocation['url'] 			= $objLocation->url;
@@ -145,7 +149,17 @@ class LocationsList extends \Contao\Module
 		$arrStates = $arrTemp;
 		
 		$this->Template->stateOptions = $this->generateSelectOptions();
+	    	$this->Template->stateFilter = $this->generateStateFilter();
 		$this->Template->states = $arrStates;
+
+	    	$categories = Category::findBy('published', '1');
+		
+		$our_cats = array();
+		foreach($categories as $category) {
+		    $our_cats[$category->id] = $category->name;
+		}
+		
+		$this->Template->categories = $our_cats;
 		
 	}
 
@@ -159,6 +173,18 @@ class LocationsList extends \Contao\Module
 		}
 		$strUnitedStates .= '</optgroup>';
 		return ($blank ? '<option value="">Select Location...</option>' : '') .$strUnitedStates .$strCanada;
+	}
+
+	public function generateStateFilter($blank = TRUE) {
+		$strUnitedStates = '<optgroup label="United States">';
+		$strCanada = '<optgroup label="Canada"><option value="CAN">All Provinces</option></optgroup>';
+		foreach ($this->arrStates['United States'] as $abbr => $state) {
+			if (!in_array($objLocation->state, array('AB','BC','MB','NB','NL','NS','NT','NU','ON','PE','QC','SK','YT'))) {
+				$strUnitedStates .= '<option value="' .$abbr .'">' .$state .'</option>';
+			}
+		}
+		$strUnitedStates .= '</optgroup>';
+		return ($blank ? '<option value="">Choose a State...</option>' : '') .$strUnitedStates .$strCanada;
 	}
 	
 	function sortByState($a, $b) {
