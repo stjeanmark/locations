@@ -15,6 +15,7 @@ namespace Asc\Backend;
 
 use Contao\DataContainer;
 use Asc\Model\Location;
+use Asc\Model\Category;
 
 class Locations extends \Backend
 {
@@ -70,24 +71,65 @@ class Locations extends \Backend
 		$this->log('A new version of record "tl_location.id='.$intId.'" has been created'.$this->getParentEntries('tl_location', $intId), __METHOD__, TL_GENERAL);
 	}
 	
+	
+	
+	// Export the Rep Locations in CSV format
 	public function exportLocations()
 	{
+	    // Get all of the Location data in the system
 		$objLocation = Location::findAll();
+		// What separates the data into columns
 		$strDelimiter = ',';
-	
+		// What wraps the data, used to help with data containing commas
+		$strDataWrapper = '"';
+	   
+        // If we found at least one Location
 		if ($objLocation) {
-			$strFilename = "locations_" .(date('Y-m-d_Hi')) ."csv";
+		    
+		    // Build the export's filename, in this case it is "locations_" and the date
+			$strFilename = "locations_" .(date('Y-m-d_Hi')) .".csv";
+			
+			// Create a new 'temporary file' in memory that will hold our CSV until we save
 			$tmpFile = fopen('php://memory', 'w');
 			
+			// Tracks loops so we can do things differently for the first line
 			$count = 0;
+			// Loop through our gathered Location data
 			while($objLocation->next()) {
+			    // Save this rows data as a php array
 				$row = $objLocation->row();
+				
+				// Unset the 'zip' data from this array
+				unset($row["zip"]);
+				
+				// Convert PID to Category and remove PID
+				$row['category'] = $row['pid'];
+				unset($row["pid"]);
+				
+				// Convert Category from serialized array to strings
+				$categories_buffer = '';
+				$categories = unserialize($row['category']);
+				$first = true;
+				foreach($categories as $cat_id) {
+				    $cat = Category::findBy(['id = ?'], [$cat_id]);
+				    
+				    if($first){
+				        $first = false;
+				        $categories_buffer .= $cat->name;
+				    } else 
+				        $categories_buffer .= ', ' . $cat->name;
+				}
+				$row['category'] = $categories_buffer;
+				
+				
+				// If this is our first loop run
 				if ($count == 0) {
 					$arrColumns = array();
 					foreach ($row as $key => $value) {
+						
 						$arrColumns[] = $key;
 					}
-					fputcsv($tmpFile, $arrColumns, $strDelimiter);
+					fputcsv($tmpFile, $arrColumns, $strDelimiter, $strDataWrapper);
 				}
 				$count ++;
 				fputcsv($tmpFile, $row, $strDelimiter);
@@ -99,10 +141,14 @@ class Locations extends \Backend
 			header('Content-Disposition: attachment; filename="' . $strFilename . '";');
 			fpassthru($tmpFile);
 			exit();
+			
 		} else {
 			return "Nothing to export";
 		}
 	}
+	
+	
+	
 	
 	public function generateAlias($varValue, DataContainer $dc)
 	{
