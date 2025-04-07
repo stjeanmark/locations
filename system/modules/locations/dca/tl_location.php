@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{location_legend},name,contact_name,contact_name_2,contact_name_3,alias;{address_legend},address,address_2,city,state,listing_zip,zip,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
+        'default'                     => '{location_legend},name,contact_name,contact_name_2,contact_name_3,alias;{address_legend},address,address_2,city,state,listing_zip,zip,territory,phone;{category_legend},pid;{website_legend},url,email;{publish_legend},published;'
     ),
  
     // Fields
@@ -222,7 +222,7 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['listing_zip'],
 			'inputType'               => 'text',
 			'default'				  => '',
-			'eval'                    => array('tl_class'=>'clr w50', 'rgxp'=>'listing_zip'),
+			'eval'                    => array('tl_class'=>'clr w100', 'rgxp'=>'listing_zip'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'zip' => array
@@ -230,6 +230,14 @@ $GLOBALS['TL_DCA']['tl_location'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['zip'],
 			'inputType'               => 'textarea',
 			'default'				  => '',
+			'eval'                    => array('tl_class'=>'clr w100'),
+			'sql'                     => "mediumtext NOT NULL default ''"
+		),
+		'territory' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_location']['territory'],
+			'inputType'               => 'textarea',
+			'default'		  => '',
 			'eval'                    => array('tl_class'=>'clr w50'),
 			'sql'                     => "mediumtext NOT NULL default ''"
 		),
