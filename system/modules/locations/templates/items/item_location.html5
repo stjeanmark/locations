@@ -1,5 +1,5 @@
 <!–– This is for each listing, list off each one ––>
-<div class="location_full">
+<div class="location_full" data-state="<?= $this->state ?>">
 	<div class='name'><?php echo $this->name; ?></div>
 	<div class='address'>
 		<?php if($this->contact_name != ""){echo $this->contact_name . "<br>";} ?>
@@ -8,6 +8,9 @@
 		<?php echo $this->address; ?><br>
 		<?php if($this->address_2 != ""){echo $this->address_2 . "<br>";} ?>
 		<?php echo $this->city; ?>, <?php echo $this->state; ?><br>
+
+		<?php if($this->territory != ""){echo $this->territory . "<br>";} ?>
+
 		<?php echo $this->listing_zip; ?><br>
 		<a href="tel:<?php echo $this->phone; ?>"><?php echo $this->phone; ?></a>
 	</div>
