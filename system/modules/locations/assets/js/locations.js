@@ -5,6 +5,7 @@ $(document).ready(function() {
     $("input.locations_zip_input").hide();
 	$("input.locations_zip_input").val("");
 	$("p.enter_zip").hide();
+	$(".filter_by_state").hide();
 
 	//the page is fully loaded, show our search boxes
 	$("div.mod_locations_list").fadeIn();
@@ -27,6 +28,7 @@ $(document).ready(function() {
 		if ($(this).val() !== '') {
 			$("input.locations_zip_input").show();
 			$("p.enter_zip").show();
+			$(".filter_by_state").show();
 			
 			
 			
@@ -198,6 +200,7 @@ $(document).ready(function() {
 			$("input.locations_zip_input").hide();
 			$("input.locations_zip_input").val("");
 			$("p.enter_zip").hide();
+			$(".filter_by_state").hide();
 		}	
 	});
 	
@@ -367,6 +370,39 @@ $(document).ready(function() {
 		}
 
 		//alert(catVal);
+	});
+
+	//when changing zip
+	$("select.filter_by_state").change(function() {
+	
+		//first hide everything
+		//hide all divs by default
+		$(".location_full").each(function(){
+			//$(this).hide();
+			$(this).fadeOut();
+		});
+		
+		//get the category selector's value
+		var state_val = $(this).val();
+		var cat_val = $("select.locations_category_selector").val();
+        
+	        var counter = 0;
+	        var cat_found = 0;
+        
+		//loop through each listing, and their children divs
+		$('.location_full').each(function(){
+			counter = counter + 1;
+			var listing_state = $(this).data('state');
+			var listing_cat = $(this).find('.hidden_cat_id').html();
+			if(listing_cat.includes(cat_val))
+			{
+				if(state_val == listing_state) {
+				    $(this).fadeIn();
+				}
+			}
+
+		});
+
 	});
 
 
