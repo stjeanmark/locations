@@ -1,23 +1,28 @@
-<!–– Wrapper for the whole module on the page ––>
 <div class="mod_locations_list">
 	<!–– Select for picking which category ––>
 	<select name="locations_category_selector" class="locations_category_selector">
 		<option value="">Choose A Category...</option>
-		<!–– pull categories from database ––>
 		<?php
-			$this->import('Database');
-			$result = $this->Database->prepare("SELECT * FROM tl_category WHERE published=1")->execute();
-			while($result->next())
-			{
-				?> <option value="<?php echo $result->id; ?>"><?php echo $result->name; ?></option> <?php
+			foreach($this->categories as $key => $category) {
+				echo '<option value="'.$key.'">'.$category.'</option>';
 			}
 		?>
-		
 	</select>
+	
+	
+	<p style="" class="filter_by_state">Filter by State</p>
+	<select name="filter_by_state" class="filter_by_state">
+		<?php
+		    print_r($this->stateFilter);
+		?>
+	</select>
+	
 	
 	<!–– input for entering in the zip code, automatically update results on input ––>
 	<p style="" class="enter_zip">Enter your ZIP code</p>
 	<input style="" name="locations_zip_input" class="locations_zip_input" type="text" name="zip"><br>
+	
+	
 
 	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
     <?php foreach($this->states as $state): ?>
